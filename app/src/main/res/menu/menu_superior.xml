@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:title="Avisos"
+        android:id="@+id/btn_avisos"
+        android:icon="@drawable/ic_btn_avisos"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:title="Configuración"
+        android:id="@+id/btn_configuracion"
+        android:icon="@drawable/ic_btn_ajustes"
+        app:showAsAction="ifRoom"
+        />
+</menu>

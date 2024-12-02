@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_tareas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddTareasActivity"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!-- TITULO -->
+
+        <TextView
+            android:id="@+id/title_add_tareas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_add_tasks"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:padding="5dp"/>
+
+        <!-- TAREA -->
+        <CheckBox
+            android:id="@+id/check_selected_tarea"
+            android:text="Marcar Completada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/txt_tarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tarea" />
+        <EditText
+            android:id="@+id/campo_tarea"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- DESCRIPCION -->
+        <TextView
+            android:id="@+id/txt_descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_descripcion_tarea" />
+        <EditText
+            android:id="@+id/campo_descripcion"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:minHeight="150dp"
+            android:gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <!-- BOTÓN PARA ABRIR CALENDARIO -->
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_fecha_tarea"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"/>
+
+            <ImageButton
+                android:id="@+id/btn_calendario_tarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+
+                app:srcCompat="@drawable/ic_btn_calendario"
+                android:layout_gravity="center"/>
+
+            <!-- VISUALIZAR FECHA ELEGIDA -->
+            <TextView
+                android:id="@+id/txt_fecha"
+                android:hint="@string/formato_fecha"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp">
+            <Button
+                android:id="@+id/btn_salir_tarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_salir_tarea"
+                android:layout_marginRight="50dp"
+                />
+            <Button
+                android:id="@+id/btn_guardar_tarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_guardar_tarea" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
+</RelativeLayout>

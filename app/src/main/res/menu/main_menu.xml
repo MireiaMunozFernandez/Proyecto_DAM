@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btn_calendario"
+        android:icon="@drawable/ic_btn_calendario"
+        android:title="@string/txt_calendario"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/btn_tareas"
+        android:icon="@drawable/ic_btn_tareas"
+        android:title="@string/txt_tasks"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/btn_notas"
+        android:icon="@drawable/ic_btn_notas"
+        android:title="@string/txt_notas"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        />
+</menu>

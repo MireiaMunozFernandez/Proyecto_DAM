@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">TasK Scheduler</string>
+    <string name="app_name_acronym">TKS</string>
+
+    <!--MAIN ACTIVITY-->
+    <string name="campo_usuario">Usuario</string>
+    <string name="campo_contrasenya">Contraseña</string>
+    <string name="btn_iniciar_sesion">Iniciar Sesión</string>
+    <string name="txt_sin_cuenta">Si no tiene cuenta:</string>
+    <string name="btn_registrarse">Registrarse</string>
+
+    <!-- REGISTRO ACTIVITY -->
+    <string name="txt_registro_nuevo_usuario">Registro nuevo usuario</string>
+    <string name="registro_campo_usuario">Usuario</string>
+    <string name="registro_campo_email">Email</string>
+    <string name="registro_campo_contrasenya">Contraseña</string>
+    <string name="registro_campo_confirmar_contraseña">Confirmar Contraseña</string>
+    <string name="registro_btn_registrar">Registrar</string>
+    <string name="registro_volver_inicio_sesion">Volver a "Inicio de Sesión"</string>
+
+    <!-- CALENDARIO FRAGMENT -->
+    <string name="txt_calendario">Calendario</string>
+
+
+    <!-- TASKS FRAGMENT -->
+    <string name="txt_tasks">Tareas Pendientes</string>
+
+    <!-- NOTAS FRAGMENT -->
+    <string name="txt_notas">Notas</string>
+
+    <!-- GENERAL ACTIVITY  -->
+
+
+    <!-- CREAR TAREAS ACTIVITY  -->
+    <string name="txt_add_tasks">Añadir tareas</string>
+    <string name="txt_tarea">Tarea</string>
+    <string name="txt_descripcion_tarea">Descripción</string>
+    <string name="txt_fecha_tarea">Asignar fecha:</string>
+    <string name="btn_guardar_tarea">Guardar</string>
+    <string name="btn_salir_tarea">Salir</string>
+    <string name="formato_fecha">00/00/0000</string>
+
+    <!-- CREAR NOTAS ACTIVITY -->
+    <string name="txt_add_notes">Añadir notas</string>
+    <string name="txt_nota">Nota</string>
+    <string name="txt_descripcion_nota">Descripción</string>
+    <string name="btn_guardar_nota">Guardar</string>
+    <string name="btn_salir_nota">Salir</string>
+
+    <!-- AVISOS ACTIVITY -->
+    <string name="txt_avisos">Avisos</string>
+    <!-- CONFIGURACIÓN ACTIVITY -->
+    <string name="txt_configuracion">Configuración</string>
+
+    <!-- NOTIFICACIONES -->
+    <string name="msg_notificacion">HOLA! Tienes tareas por hacer hoy. Entra en la app para verlas.</string>
+    <string name="msg_notificacion_no_tareas">HOLA! No tienes tareas por hacer hoy.</string>
+</resources>
