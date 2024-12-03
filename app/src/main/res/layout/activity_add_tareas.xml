@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Diseño de la pantalla para registrar o modificar tareas -->
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,16 +9,15 @@
     android:id="@+id/add_tareas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AddTareasActivity"
-    >
+    tools:context=".activities.AddTareasActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
 
-        <!-- TITULO -->
-
+        <!-- Muestra el titulo de la pantalla -->
         <TextView
             android:id="@+id/title_add_tareas"
             android:layout_width="wrap_content"
@@ -25,7 +27,7 @@
             android:layout_gravity="center"
             android:padding="5dp"/>
 
-        <!-- TAREA -->
+        <!-- Permite indicar si la tarea se ha completado o no -->
         <CheckBox
             android:id="@+id/check_selected_tarea"
             android:text="Marcar Completada"
@@ -33,23 +35,28 @@
             android:layout_height="wrap_content"
             />
 
+        <!-- Indica que dato se debe introducir en el campo que le sigue -->
         <TextView
             android:id="@+id/txt_tarea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txt_tarea" />
+
+        <!-- Permite introducir el nombre de la tarea -->
         <EditText
             android:id="@+id/campo_tarea"
             android:textSize="25sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <!-- DESCRIPCION -->
+        <!-- Indica que dato se debe introducir en el campo que le sigue -->
         <TextView
             android:id="@+id/txt_descripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txt_descripcion_tarea" />
+
+        <!-- Permite introducir la descripción de la tarea -->
         <EditText
             android:id="@+id/campo_descripcion"
             android:textSize="20sp"
@@ -58,13 +65,14 @@
             android:gravity="start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
-            <!-- BOTÓN PARA ABRIR CALENDARIO -->
 
+            <!-- Indica donde pulsar para seleccionar una fecha -->
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
@@ -74,6 +82,7 @@
                 android:padding="5dp"
                 android:layout_marginRight="10dp"/>
 
+            <!-- Abre un calendario para seleccionar una fecha -->
             <ImageButton
                 android:id="@+id/btn_calendario_tarea"
                 android:layout_width="wrap_content"
@@ -83,7 +92,7 @@
                 app:srcCompat="@drawable/ic_btn_calendario"
                 android:layout_gravity="center"/>
 
-            <!-- VISUALIZAR FECHA ELEGIDA -->
+            <!-- Permite visualizar la fecha escogida en el calendario -->
             <TextView
                 android:id="@+id/txt_fecha"
                 android:hint="@string/formato_fecha"
@@ -93,11 +102,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp">
+
+            <!-- Cierra la activity sin guardar nada -->
             <Button
                 android:id="@+id/btn_salir_tarea"
                 android:layout_width="wrap_content"
@@ -105,13 +117,15 @@
                 android:text="@string/btn_salir_tarea"
                 android:layout_marginRight="50dp"
                 />
+
+            <!-- Guarda los datos introducidos y cierra la activity -->
             <Button
                 android:id="@+id/btn_guardar_tarea"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_guardar_tarea" />
-
-
         </androidx.appcompat.widget.LinearLayoutCompat>
+
     </LinearLayout>
+
 </RelativeLayout>

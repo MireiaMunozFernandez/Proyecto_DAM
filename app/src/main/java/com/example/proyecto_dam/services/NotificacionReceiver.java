@@ -13,13 +13,15 @@ import com.example.proyecto_dam.dal.UnitOfWork;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+//Genera la notificación
+
 public class NotificacionReceiver extends BroadcastReceiver {
     private static final String CHANNEL_ID = "mi_canal";
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // Obtener los datos de la notificación
 
+        // Obtener los datos de la notificación
         int tareasPendientes;
         UnitOfWork uow = new UnitOfWork(context, false);
         tareasPendientes = uow.getTareaRepository().GetByDateWithoutUser(DateMapper.Now()).size();

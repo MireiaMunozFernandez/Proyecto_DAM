@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Diesño de la activity para iniciar sesión -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,6 +15,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- Muestra el nombre de la aplicación -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,16 +24,17 @@
             android:text="@string/app_name"
             android:textSize="45sp" />
 
+        <!-- Indica que dato se debe introducir en el campo que le sigue -->
         <TextView
             android:id="@+id/txt_campo_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-
             android:layout_marginTop="180dp"
             android:text="@string/campo_usuario"
             android:textSize="20sp" />
 
+        <!-- Permite introducir el dato requerido -->
         <EditText
             android:id="@+id/campo_usuario"
             android:layout_width="match_parent"
@@ -40,8 +45,9 @@
             android:ellipsize="start"
             android:ems="10"
             android:inputType="text"
-
             android:textColor="#000000" />
+
+        <!-- Indica que dato se debe introducir en el campo que le sigue -->
         <TextView
             android:id="@+id/txt_campo_contrasenya"
             android:layout_width="match_parent"
@@ -51,6 +57,7 @@
             android:text="@string/campo_contrasenya"
             android:textSize="20sp" />
 
+        <!-- Permite introducir el dato requerido -->
         <EditText
             android:id="@+id/campo_contrasenya"
             android:layout_width="match_parent"
@@ -63,6 +70,7 @@
             android:inputType="textPassword"
             android:textColor="#000000" />
 
+        <!-- Inicia sesión -->
         <Button
             android:id="@+id/btn_iniciar_sesion"
             android:layout_width="wrap_content"
@@ -77,6 +85,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="30dp">
 
+            <!-- Indica donde dirigirse en caso de no tener usuario registrado -->
             <TextView
                 android:id="@+id/txt_sin_cuenta"
                 android:layout_width="wrap_content"
@@ -88,6 +97,7 @@
                 android:text="@string/txt_sin_cuenta"
                 android:textSize="18sp" />
 
+            <!-- Dirige a la activity para registrar un usuario -->
             <Button
                 android:id="@+id/btn_registrarse"
                 android:layout_width="wrap_content"
@@ -96,6 +106,7 @@
                 android:textSize="20sp"
                 android:text="@string/btn_registrarse" />
         </androidx.appcompat.widget.LinearLayoutCompat>
+
     </LinearLayout>
 
 </RelativeLayout>

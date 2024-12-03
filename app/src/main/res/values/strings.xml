@@ -1,4 +1,8 @@
 <resources>
+
+<!-- Registro de los textos que contendrá la aplicación y que, posteriormente, serán llamados por el resto de ficheros.
+ De esta forma facilita su modificación en caso de que sea necesaria. -->
+
     <string name="app_name">TasK Scheduler</string>
     <string name="app_name_acronym">TKS</string>
 
@@ -21,15 +25,11 @@
     <!-- CALENDARIO FRAGMENT -->
     <string name="txt_calendario">Calendario</string>
 
-
     <!-- TASKS FRAGMENT -->
     <string name="txt_tasks">Tareas Pendientes</string>
 
     <!-- NOTAS FRAGMENT -->
     <string name="txt_notas">Notas</string>
-
-    <!-- GENERAL ACTIVITY  -->
-
 
     <!-- CREAR TAREAS ACTIVITY  -->
     <string name="txt_add_tasks">Añadir tareas</string>

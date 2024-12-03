@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- Registro de los colores de cada elemento de la aplicación cuando el dispositivo tenga la configuración en modo claro,
+     utilizando los registrados en el fichero 'colors.xml'.-->
+
     <style name="Base.Theme.Proyecto_DAM" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- Primary brand color -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
         <item name="colorOnPrimary">@color/windowBackgroundLightColor</item>
@@ -10,11 +11,7 @@
         <item name="android:titleTextColor">@color/text</item>
         <item name="android:buttonTint">@color/colorIconsButtons</item>
         <item name="android:icon">@color/colorIconsButtons</item>
-
-
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-
 
     <style name="Theme.Proyecto_DAM" parent="Base.Theme.Proyecto_DAM" />
 </resources>

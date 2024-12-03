@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Fragmento que muestra las notas registradas y permite abrir la activity para crearlas y modificarlas -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.Notas">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <!-- Muestra el titulo del fragmento -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:title="@string/txt_notas"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
-        android:minHeight="?attr/actionBarSize"
-        app:title="@string/txt_notas"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:backgroundTint="@color/black"
-        android:background="?android:attr/listDivider" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listado_notas"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        tools:listitem="@layout/list_item_notas"
-        />
+        <!-- Línea divisoria entre el Toolbar y el listado de notas -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:backgroundTint="@color/black"
+            android:background="?android:attr/listDivider" />
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/btn_add_notas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        app:icon="@drawable/ic_btn_add" />
+        <!-- Muestra un listado de las notas registradas teniendo en cuenta el diseño creado en el layout 'list_item_notas.xml' -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listado_notas"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            tools:listitem="@layout/list_item_notas"
+            />
+
+        <!-- Abre la activity para crear notas -->
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btn_add_notas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            app:icon="@drawable/ic_btn_add" />
+
     </LinearLayout>
+
 </FrameLayout>

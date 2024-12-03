@@ -35,19 +35,12 @@ import java.util.Date;
 
 public class AddTareasActivity extends AppCompatActivity {
 
-  TextView Fecha;
+    TextView Fecha;
     EditText Tarea, Descripcion;
     ImageButton btn_calendario;
     CheckBox Selected;
-
-    DatePicker datePicker;
-    int day;
-    int month;
-    int year;
-
     Button btn_guardar;
     Button btn_salir;
-
     UnitOfWork uow;
     UsuarioPoco usuario;
     TareaPoco tarea;
@@ -62,12 +55,14 @@ public class AddTareasActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         Bundle parametros = this.getIntent().getExtras();
         String usuarioStr = parametros.getString("usuario");
         long dateInMili = parametros.getLong("date", 0);
         if(dateInMili == 0) {
             dateInMili =DateMapper.Now().getTimeInMillis();
         }
+
         Calendar calendar = DateMapper.LongToDate(dateInMili);
         usuario = UsuarioPoco.CreateByJson(usuarioStr);
         this.tarea = new TareaPoco(0, usuario.getId(), "", "", calendar, false);

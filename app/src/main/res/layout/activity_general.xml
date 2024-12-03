@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Diseño de la activity que muestra los fragmentos creados y permite navegar entre ellos-->
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,16 +11,15 @@
     android:layout_height="match_parent"
     tools:context=".activities.GeneralActivity">
 
-
+    <!-- Espacio destinado al fragmento seleccionado -->
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
     </FrameLayout>
 
-
+    <!-- Muestra los elementos del fichero 'main_menu.xml' y permite navegar entre los fragmentos -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationBar"
         android:layout_width="0dp"

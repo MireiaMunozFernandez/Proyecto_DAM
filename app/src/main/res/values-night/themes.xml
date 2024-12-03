@@ -1,7 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- Registro de los colores de cada elemento de la aplicación cuando el dispositivo tenga la configuración en modo oscuro,
+         utilizando los registrados en el fichero 'colors.xml'.-->
+
     <style name="Base.Theme.Proyecto_DAM" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
         <item name="colorOnPrimary">@color/black</item>
@@ -9,6 +11,5 @@
         <item name="android:textColor">@color/textDark</item>
         <item name="android:titleTextColor">@color/textDark</item>
         <item name="android:icon">@color/colorIconsButtonsDark</item>
-
     </style>
 </resources>

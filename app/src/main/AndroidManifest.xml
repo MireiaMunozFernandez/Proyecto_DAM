@@ -22,9 +22,6 @@
 
 
         <activity
-            android:name=".activities.ConfiguracionActivity"
-            android:exported="false" />
-        <activity
             android:name=".activities.AddNotasActivity"
             android:exported="false" />
         <activity
@@ -58,9 +55,6 @@
             android:name=".fragments.Calendario"
             android:exported="false" />
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

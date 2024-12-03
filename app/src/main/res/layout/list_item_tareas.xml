@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Diseño de las tareas registradas. -->
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -6,6 +9,7 @@
     android:layout_marginEnd="8dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +17,7 @@
         android:padding="8dp"
         >
 
-
+        <!-- Muestra si la tarea se ha marcado cómo 'completada' o no -->
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
@@ -28,32 +32,39 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <TextView
-            android:id="@+id/item_fecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="30dp"
-            android:textSize="10sp"
-            android:text="Fecha"/>
-        <TextView
-            android:id="@+id/item_tarea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="30dp"
-            android:textSize="15sp"
-            android:text="Tarea" />
 
-        <TextView
-            android:id="@+id/item_descripcion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="30dp"
-            android:text="Descripcion"
-            android:textSize="12sp" />
+            <!-- Muestra la fecha de la tarea -->
+            <TextView
+                android:id="@+id/item_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:textSize="10sp"
+                android:text="Fecha"/>
+
+            <!-- Muestra el nombre de la tarea -->
+            <TextView
+                android:id="@+id/item_tarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:textSize="15sp"
+                android:text="Tarea" />
+
+            <!-- Muestra la descripción de la tarea -->
+            <TextView
+                android:id="@+id/item_descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:text="Descripcion"
+                android:textSize="12sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!-- Botón para modificar la tarea. Abre la activity 'AddTareas' con la tarea seleccionada -->
         <ImageButton
             android:id="@+id/btn_editar_tareas"
             android:layout_width="wrap_content"
@@ -61,6 +72,7 @@
             android:layout_gravity="center"
             android:background="#00FFFFFF"
             app:srcCompat="@drawable/ic_edit" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

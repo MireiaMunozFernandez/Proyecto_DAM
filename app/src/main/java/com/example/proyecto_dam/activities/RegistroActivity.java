@@ -27,11 +27,10 @@ public class RegistroActivity extends AppCompatActivity {
     EditText Usuario;
     EditText Password;
     EditText Email;
-
     UsuarioRepository usuarioRepository;
-
     String nombre = " ", email = " ", password = " ", confirmarPassword = " ";
     UnitOfWork uow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +42,7 @@ public class RegistroActivity extends AppCompatActivity {
             return insets;
         });
 
-       this.uow = new UnitOfWork(this, false);
+        this.uow = new UnitOfWork(this, false);
 
         RegistrarUsuario = findViewById(R.id.registro_btn_registrar);
         VolverInicioSesion = findViewById(R.id.registro_volver_inicio_sesion);
@@ -53,17 +52,15 @@ public class RegistroActivity extends AppCompatActivity {
         Password = findViewById(R.id.registro_campo_contrasenya);
         Email = findViewById(R.id.registro_campo_email);
 
+        //Crear usuario
         RegistrarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //uow.getUsuarioRepository().InsertOrUpdate(new UsuarioPoco(0, registro_campo_usuario.getText().toString(), registro_campo_contrasenya.getText().toString(), registro_campo_email.getText().toString()));
-                //
                 ValidarDatos();
-
-               // startActivity(new Intent(RegistroActivity.this, MainActivity.class));
             }
         });
+
+        //Abrir pantalla de 'Inicio Sesión'
         VolverInicioSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,25 +69,23 @@ public class RegistroActivity extends AppCompatActivity {
         });
     }
 
+    //Cerrar UnitOfWork
     @Override
     protected void onDestroy() {
         this.uow.Close();
         super.onDestroy();
     }
 
+    //Comprobar datos introducidos
     private void ValidarDatos(){
         nombre = Usuario.getText().toString();
         email = Email.getText().toString();
         password = Password.getText().toString();
         confirmarPassword = Password.getText().toString();
-        //UsuarioPoco usuarioExistente =  uow.getUsuarioRepository().GetByName(nombre);
 
         if (TextUtils.isEmpty(nombre)){
             Toast.makeText(this, "Ingrese nombre", Toast.LENGTH_SHORT).show();
         }
-        //else if (usuarioExistente.equals(nombre)){
-          //Toast.makeText(this, "Este usuario ya existe", Toast.LENGTH_SHORT).show();
-        //}
         else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Toast.makeText(this, "Ingrese correo", Toast.LENGTH_SHORT).show();
         }
@@ -107,6 +102,7 @@ public class RegistroActivity extends AppCompatActivity {
         }
     }
 
+    //Registrar usuario en la base de datos
     private void CrearUsuario(){
         this.uow.getUsuarioRepository().InsertOrUpdate(new UsuarioPoco( 0, nombre, password, email ));
         Toast.makeText(this, "El Usuario se ha guardado correctamante", Toast.LENGTH_SHORT).show();

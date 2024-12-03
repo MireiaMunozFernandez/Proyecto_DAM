@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Menú inferior que contendrá los botones para moverse entre fragmentos. -->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Botón Calendario -->
     <item
         android:id="@+id/btn_calendario"
         android:icon="@drawable/ic_btn_calendario"
@@ -8,6 +13,8 @@
         app:showAsAction="ifRoom"
         android:enabled="true"
         />
+
+    <!-- Botón Tareas Pendientes -->
     <item
         android:id="@+id/btn_tareas"
         android:icon="@drawable/ic_btn_tareas"
@@ -15,6 +22,8 @@
         app:showAsAction="ifRoom"
         android:enabled="true"
         />
+
+    <!-- Botón Notas -->
     <item
         android:id="@+id/btn_notas"
         android:icon="@drawable/ic_btn_notas"

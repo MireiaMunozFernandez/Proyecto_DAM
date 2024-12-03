@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Asignación del color de fondo del logo de la aplicación. -->
 <resources>
     <color name="ic_calendario_background">#D5BBEF</color>
 </resources>

@@ -37,6 +37,7 @@ public class Tareas extends Fragment implements TareaOnAdapterItemClickListener 
     RecyclerView recyclerView;
     private ActivityResultLauncher<Intent> launcher;
 
+    //Recuperar usuario registrado
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +46,14 @@ public class Tareas extends Fragment implements TareaOnAdapterItemClickListener 
             usuario = UsuarioPoco.CreateByJson(usuarioStr);
         }
     }
+
+    //Cerrar UnitOfWork
     @Override
     public void onDestroy() {
         this.uow.Close();
         super.onDestroy();
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,10 +62,10 @@ public class Tareas extends Fragment implements TareaOnAdapterItemClickListener 
         context = container.getContext();
         this.uow = new UnitOfWork(context, false);
         initUI(view);
-       // abrirConfiguracion(view);
         return view;
     }
 
+    //Abrir activity 'AddTareas' con los datos de la tarea seleccionada
     @Override
     public void onAdapterItemClickListener(int position, TareaPoco tarea) {
         Bundle parmetros = new Bundle();
@@ -72,14 +76,13 @@ public class Tareas extends Fragment implements TareaOnAdapterItemClickListener 
         launcher.launch(i);
     }
 
+    //Recuperar listado de tareas registradas
     private void initUI(View v){
         Button btn_add_tareas =(Button)v.findViewById(R.id.btn_add_tareas);
         recyclerView = v.findViewById(R.id.listado_tareas);
-
         List<TareaPoco> list = uow.getTareaRepository().GetByUserId(usuario.getId());
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(new TareaCustomAdapter(this, list));
-
         this.launcher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -90,10 +93,10 @@ public class Tareas extends Fragment implements TareaOnAdapterItemClickListener 
                 }
         );
 
+        //Abrir activity 'AddTareas'
         btn_add_tareas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                //startActivity( new Intent(getActivity(), AddTareasActivity.class));
                 Bundle parmetros = new Bundle();
                 parmetros.putString("usuario", usuario.toJSON());
                 Intent i = new Intent(getActivity(), AddTareasActivity.class);
@@ -118,17 +121,5 @@ public class Tareas extends Fragment implements TareaOnAdapterItemClickListener 
 
 
         }
-
-
     }
-//    private void abrirConfiguracion(View v){
-//        ImageButton btn_configuracion = (ImageButton)v.findViewById(R.id.btn_configuracion);
-//
-//        btn_configuracion.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getActivity(), ConfiguracionActivity.class));
-//            }
-//        });
-//    }
 }

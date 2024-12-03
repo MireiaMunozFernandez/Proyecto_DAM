@@ -25,7 +25,10 @@ public class PantallaDeCarga extends AppCompatActivity {
             return insets;
         });
 
+        //Duración activity
         int Tiempo = 3000;
+
+        //Abrir activity 'Inicio Sesión' pasado el tiempo indicado
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

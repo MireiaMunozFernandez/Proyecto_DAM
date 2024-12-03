@@ -41,14 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
     UsuarioRepository usuarioRepository;
     UnitOfWork uow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
-
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -57,14 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         this.uow = new UnitOfWork(this, false);
-
         btn_registrarse = findViewById(R.id.btn_registrarse);
         btn_iniciar_sesion = findViewById(R.id.btn_iniciar_sesion);
-
         Usuario = findViewById(R.id.campo_usuario);
         Contrasenya = findViewById(R.id.campo_contrasenya);
 
 
+        //Abrir activity 'Registro'
         btn_registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,24 +69,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Comprobar datos usuario
         btn_iniciar_sesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ValidarUsuario();
-                //startActivity(new Intent(MainActivity.this, GeneralActivity.class));
             }
         });
+
         crearCanalDeNotificacion();
 
         // Programar la notificación
         programarNotificacion(System.currentTimeMillis() + 5000);
     }
+
+    //Cerrar UnitOfWork
     @Override
     protected void onDestroy() {
         this.uow.Close();
         super.onDestroy();
     }
 
+    //Comprobar cumplimentación campos obligatorios
     private void ValidarUsuario(){
         String usuario = Usuario.getText().toString();
         String contrasenya = Contrasenya.getText().toString();
@@ -102,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
             Login(usuario, contrasenya);
         }
     }
+
+    //Comprobar datos registrados en base de datos
     private void Login(String usuario, String contrasenya){
         UsuarioPoco usuarioExistente =  uow.getUsuarioRepository().GetByName(usuario);
         if (usuarioExistente != null && usuarioExistente.getPassword().equals(contrasenya)){
@@ -116,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Enviar notificación
     private void crearCanalDeNotificacion() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence nombre = "Canal de Prueba";
@@ -131,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Programar envío notificación
     private void programarNotificacion(long tiempoEnMilisegundos) {
         // Crear un Intent que llamará al BroadcastReceiver
         Intent intent = new Intent(this, NotificacionReceiver.class);

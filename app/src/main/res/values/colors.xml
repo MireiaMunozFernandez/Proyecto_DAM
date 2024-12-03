@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Registro los colores que se necesitarán. -->
 <resources>
-
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-<color name="windowBackgroundLightColor">#EDE7F6</color>
-<!--    <color name="windowBackgroundNightColor">#424242</color>-->
-   <color name="colorPrimary">#d1c4e9</color>
+    <color name="windowBackgroundLightColor">#EDE7F6</color>
+    <color name="colorPrimary">#d1c4e9</color>
     <color name="windowBackgroundNightColor">#3b354a</color>
-<!--    <color name="colorPrimary">#211F26</color>-->
-
     <color name="colorPrimaryDark">#E8DEF8</color>
-
     <color name="text">#1D1B20</color>
     <color name="textDark">#E6E0E9</color>
     <color name="colorIconsButtons">#4A4458</color>
     <color name="colorIconsButtonsDark">#E8DEF8</color>
-
     <color name="transparent">#00FF0000</color>
 
 </resources>

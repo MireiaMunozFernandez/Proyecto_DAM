@@ -16,19 +16,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.example.proyecto_dam.R;
 import com.example.proyecto_dam.activities.AddNotasActivity;
-import com.example.proyecto_dam.activities.AddTareasActivity;
-import com.example.proyecto_dam.activities.ConfiguracionActivity;
 import com.example.proyecto_dam.activities.viewHolder.NotaCustomAdapter;
 import com.example.proyecto_dam.activities.viewHolder.NotaOnAdapterItemClickListener;
-import com.example.proyecto_dam.activities.viewHolder.TareaCustomAdapter;
-import com.example.proyecto_dam.activities.viewHolder.TareaOnAdapterItemClickListener;
 import com.example.proyecto_dam.dal.UnitOfWork;
 import com.example.proyecto_dam.poco.NotaPoco;
-import com.example.proyecto_dam.poco.TareaPoco;
 import com.example.proyecto_dam.poco.UsuarioPoco;
 
 import java.util.List;
@@ -41,9 +35,9 @@ public class Notas extends Fragment implements NotaOnAdapterItemClickListener {
     RecyclerView recyclerView;
     private ActivityResultLauncher<Intent> launcher;
     public Notas() {
-        // Required empty public constructor
     }
 
+    //Recuperar usuario registrado
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +46,8 @@ public class Notas extends Fragment implements NotaOnAdapterItemClickListener {
             usuario = UsuarioPoco.CreateByJson(usuarioStr);
         }
     }
+
+    //Cerrar UnitOfWork
     @Override
     public void onDestroy() {
         this.uow.Close();
@@ -65,11 +61,10 @@ public class Notas extends Fragment implements NotaOnAdapterItemClickListener {
         context = container.getContext();
         this.uow = new UnitOfWork(context, false);
         initUI(view);
-        //abrirConfiguracion(view);
-
         return view;
     }
 
+    //Abrir activity 'AddNotas' con los datos de la nota seleccionada
     @Override
     public void onAdapterItemClickListener(int position, NotaPoco nota) {
         Bundle parmetros = new Bundle();
@@ -80,15 +75,13 @@ public class Notas extends Fragment implements NotaOnAdapterItemClickListener {
         launcher.launch(i);
     }
 
+    //Recuperar listado de notas registradas
     private void initUI(View v){
         Button btn_add_notas =(Button)v.findViewById(R.id.btn_add_notas);
-
-
         recyclerView = v.findViewById(R.id.listado_notas);
         List<NotaPoco> list = uow.getNotaRepository().GetByUserId(usuario.getId());
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(new NotaCustomAdapter(this, list));
-
         this.launcher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -99,11 +92,10 @@ public class Notas extends Fragment implements NotaOnAdapterItemClickListener {
                 }
         );
 
+        //Abrir activity 'AddNotas'
         btn_add_notas.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View arg0) {
-                //startActivity( new Intent(getActivity(), AddNotasActivity.class));
                 Bundle parmetros = new Bundle();
                 parmetros.putString("usuario", usuario.toJSON());
                 Intent i = new Intent(getActivity(), AddNotasActivity.class);
@@ -114,14 +106,4 @@ public class Notas extends Fragment implements NotaOnAdapterItemClickListener {
         });
     }
 
-//    private void abrirConfiguracion(View v){
-//        ImageButton btn_configuracion = (ImageButton)v.findViewById(R.id.btn_configuracion);
-//
-//        btn_configuracion.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getActivity(), ConfiguracionActivity.class));
-//            }
-//        });
-//    }
 }
