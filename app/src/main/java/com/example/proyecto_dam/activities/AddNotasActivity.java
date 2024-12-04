@@ -29,6 +29,7 @@ public class AddNotasActivity extends AppCompatActivity {
     CheckBox Selected;
     Button btn_guardar;
     Button btn_salir;
+    Button btn_eliminar;
 
     UnitOfWork uow;
     UsuarioPoco usuario;
@@ -57,6 +58,7 @@ public class AddNotasActivity extends AppCompatActivity {
         Selected = findViewById(R.id.check_selected_nota);
         btn_guardar = findViewById(R.id.btn_guardar_nota);
         btn_salir = findViewById(R.id.btn_salir_nota);
+        btn_eliminar = findViewById(R.id.btn_eliminar_nota);
 
         if(notaStr != null) {
             this.nota = NotaPoco.CreateByJson(notaStr);
@@ -75,6 +77,13 @@ public class AddNotasActivity extends AppCompatActivity {
                 finish();
             }
         });
+        btn_eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EliminarNota();
+            }
+        });
+
 
 
     }
@@ -99,6 +108,17 @@ public class AddNotasActivity extends AppCompatActivity {
             this.nota.setSelected(Selected.isChecked());
             this.uow.getNotaRepository().InsertOrUpdate(this.nota);
             Toast.makeText(this, "La Nota se ha guardado correctamante", Toast.LENGTH_SHORT).show();
+            setResult(RESULT_OK);
+            finish();
+        }
+    }
+
+    private void EliminarNota(){
+        if (this.nota.getId() == 0){
+            Toast.makeText(this, "La nota no existe", Toast.LENGTH_SHORT).show();
+        } else {
+            this.uow.getNotaRepository().DeleteById(this.nota.getId());
+            Toast.makeText(this, "La Nota se ha eliminado correctamante", Toast.LENGTH_SHORT).show();
             setResult(RESULT_OK);
             finish();
         }

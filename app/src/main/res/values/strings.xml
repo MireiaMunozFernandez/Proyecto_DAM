@@ -38,6 +38,7 @@
     <string name="txt_fecha_tarea">Asignar fecha:</string>
     <string name="btn_guardar_tarea">Guardar</string>
     <string name="btn_salir_tarea">Salir</string>
+    <string name="btn_eliminar_tarea">Eliminar</string>
     <string name="formato_fecha">00/00/0000</string>
 
     <!-- CREAR NOTAS ACTIVITY -->
@@ -46,6 +47,7 @@
     <string name="txt_descripcion_nota">Descripción</string>
     <string name="btn_guardar_nota">Guardar</string>
     <string name="btn_salir_nota">Salir</string>
+    <string name="btn_eliminar_nota">Eliminar</string>
 
     <!-- AVISOS ACTIVITY -->
     <string name="txt_avisos">Avisos</string>

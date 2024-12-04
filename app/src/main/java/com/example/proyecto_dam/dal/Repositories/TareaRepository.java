@@ -87,4 +87,10 @@ public class TareaRepository extends BaseRepository {
         TareaPoco result = list.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
         return result;
     }
+
+    public int DeleteById(long id) {
+        ContentValues values = new ContentValues();
+        int i = this.Db.delete(TareaTablesHelper.TABLE_TAREAS, TareaTablesHelper.COLUMN_TAREAS_ID + " =" + id, null);
+        return i;
+    }
 }

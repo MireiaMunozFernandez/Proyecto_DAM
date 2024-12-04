@@ -78,15 +78,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_salir_nota"
-                android:layout_marginRight="50dp" />
+                android:layout_marginRight="30dp" />
+            <!-- Elimina los datos introducidos y cierra la activity -->
+            <Button
+                android:id="@+id/btn_eliminar_nota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_eliminar_nota" />
 
             <!-- Guarda los datos introducidos y cierra la activity -->
             <Button
                 android:id="@+id/btn_guardar_nota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:text="@string/btn_guardar_nota" />
         </androidx.appcompat.widget.LinearLayoutCompat>
+
 
     </LinearLayout>
 

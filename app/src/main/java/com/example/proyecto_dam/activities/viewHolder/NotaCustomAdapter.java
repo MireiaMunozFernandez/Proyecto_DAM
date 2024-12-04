@@ -75,14 +75,7 @@ public class NotaCustomAdapter extends RecyclerView.Adapter<NotaCustomAdapter.No
         return new NotaViewHolder(view);
     }
 
-//    @Override
-//    public NotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        // Inflate the binding for the row layout
-//        ItemsRowBinding binding = ItemsRowBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-//        return new NotaViewHolder(binding);
-//    }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(NotaViewHolder viewHolder,
                                  @SuppressLint("RecyclerView") final int position) {

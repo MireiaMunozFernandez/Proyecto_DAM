@@ -69,4 +69,10 @@ public class NotaRepository extends BaseRepository {
         NotaPoco result = list.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
         return result;
     }
+
+    public int DeleteById(long id) {
+        ContentValues values = new ContentValues();
+        int i = this.Db.delete(NotaTablesHelper.TABLE_NOTAS, NotaTablesHelper.COLUMN_NOTAS_ID + " =" + id, null);
+        return i;
+    }
 }

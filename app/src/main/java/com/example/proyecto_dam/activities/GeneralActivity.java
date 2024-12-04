@@ -78,7 +78,7 @@ public class GeneralActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    //Abrir fragmento en función del botón seleccionado
+    //Abre fragmento en función del botón seleccionado
     private BottomNavigationView.OnItemSelectedListener selectedListener =
             new BottomNavigationView.OnItemSelectedListener() {
                 @Override
