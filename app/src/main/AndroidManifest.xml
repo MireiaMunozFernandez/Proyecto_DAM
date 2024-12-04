@@ -51,9 +51,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".fragments.Calendario"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".fragments.Calendario"-->
+<!--            android:exported="false" />-->
 
     </application>
 
