@@ -3,8 +3,6 @@ package com.example.proyecto_dam.dal.Repositories.BaseRepository;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.proyecto_dam.dal.TablesHelper.UsuarioTablesHelper;
-import com.example.proyecto_dam.poco.UsuarioPoco;
 
 public class BaseRepository {
 
@@ -29,7 +27,7 @@ public class BaseRepository {
     protected int getColumnIndex(Cursor cursor, String campo) {
         int index = cursor.getColumnIndex(campo);
         if(index < 0) {
-            return 0;//throw new NoSuchFieldException("El campo no existe");
+            return 0;
         }
         return index;
     }

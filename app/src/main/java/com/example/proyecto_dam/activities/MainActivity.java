@@ -24,7 +24,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.proyecto_dam.R;
-import com.example.proyecto_dam.dal.Repositories.UsuarioRepository;
 import com.example.proyecto_dam.dal.UnitOfWork;
 import com.example.proyecto_dam.poco.UsuarioPoco;
 import com.example.proyecto_dam.services.NotificacionReceiver;
@@ -35,11 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "mi_canal";
     Button btn_registrarse;
     Button btn_iniciar_sesion;
-
     EditText Usuario;
     EditText Contrasenya;
-
-    UsuarioRepository usuarioRepository;
     UnitOfWork uow;
 
     @Override

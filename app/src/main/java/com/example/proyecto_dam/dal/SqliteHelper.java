@@ -36,7 +36,6 @@ public class SqliteHelper extends SQLiteOpenHelper {
         this.Usuario.Delete(db);
         this.Tarea.Delete(db);
         this.Nota.Delete(db);
-
         onCreate(db);
     }
 

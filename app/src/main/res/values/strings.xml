@@ -49,11 +49,6 @@
     <string name="btn_salir_nota">Salir</string>
     <string name="btn_eliminar_nota">Eliminar</string>
 
-    <!-- AVISOS ACTIVITY -->
-    <string name="txt_avisos">Avisos</string>
-    <!-- CONFIGURACIÓN ACTIVITY -->
-    <string name="txt_configuracion">Configuración</string>
-
     <!-- NOTIFICACIONES -->
     <string name="msg_notificacion">HOLA! Tienes tareas por hacer hoy. Entra en la app para verlas.</string>
     <string name="msg_notificacion_no_tareas">HOLA! No tienes tareas por hacer hoy.</string>

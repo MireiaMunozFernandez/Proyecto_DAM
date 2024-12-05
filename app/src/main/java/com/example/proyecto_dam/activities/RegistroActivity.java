@@ -16,7 +16,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.proyecto_dam.R;
-import com.example.proyecto_dam.dal.Repositories.UsuarioRepository;
 import com.example.proyecto_dam.dal.UnitOfWork;
 import com.example.proyecto_dam.poco.UsuarioPoco;
 
@@ -27,7 +26,6 @@ public class RegistroActivity extends AppCompatActivity {
     EditText Usuario;
     EditText Password;
     EditText Email;
-    UsuarioRepository usuarioRepository;
     String nombre = " ", email = " ", password = " ", confirmarPassword = " ";
     UnitOfWork uow;
 
@@ -46,8 +44,6 @@ public class RegistroActivity extends AppCompatActivity {
 
         RegistrarUsuario = findViewById(R.id.registro_btn_registrar);
         VolverInicioSesion = findViewById(R.id.registro_volver_inicio_sesion);
-
-
         Usuario = findViewById(R.id.registro_campo_usuario);
         Password = findViewById(R.id.registro_campo_contrasenya);
         Email = findViewById(R.id.registro_campo_email);

@@ -30,7 +30,6 @@ public class AddNotasActivity extends AppCompatActivity {
     Button btn_guardar;
     Button btn_salir;
     Button btn_eliminar;
-
     UnitOfWork uow;
     UsuarioPoco usuario;
     NotaPoco nota;

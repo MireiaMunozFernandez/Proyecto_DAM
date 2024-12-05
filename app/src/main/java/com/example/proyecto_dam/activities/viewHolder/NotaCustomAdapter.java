@@ -65,10 +65,8 @@ public class NotaCustomAdapter extends RecyclerView.Adapter<NotaCustomAdapter.No
         localDataSet = dataSet;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
     public NotaViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.list_item_notas, viewGroup, false);
 
@@ -83,7 +81,6 @@ public class NotaCustomAdapter extends RecyclerView.Adapter<NotaCustomAdapter.No
         viewHolder.getTextName().setText(localDataSet.get(position).getName());
         viewHolder.getTextDescripcion().setText(localDataSet.get(position).getDescripcion());
         viewHolder.itemView.setBackgroundColor(selected_position == position ? Color.GREEN : Color.TRANSPARENT);
-        //NotaPoco item = localDataSet.get(position);
 
         viewHolder.btn_selecionar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +92,6 @@ public class NotaCustomAdapter extends RecyclerView.Adapter<NotaCustomAdapter.No
         );
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return localDataSet == null ? 0 : localDataSet.size();

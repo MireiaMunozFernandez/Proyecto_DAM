@@ -41,6 +41,7 @@ public class AddTareasActivity extends AppCompatActivity {
     CheckBox Selected;
     Button btn_guardar;
     Button btn_salir;
+    Button btn_eliminar;
     UnitOfWork uow;
     UsuarioPoco usuario;
     TareaPoco tarea;
@@ -75,6 +76,7 @@ public class AddTareasActivity extends AppCompatActivity {
         btn_calendario = findViewById(R.id.btn_calendario_tarea);
         btn_guardar = findViewById(R.id.btn_guardar_tarea);
         btn_salir = findViewById(R.id.btn_salir_tarea);
+        btn_eliminar = findViewById(R.id.btn_eliminar_tarea);
         Selected = findViewById(R.id.check_selected_tarea);
         Fecha.setText(DateMapper.DateToString(calendar));
 
@@ -93,6 +95,12 @@ public class AddTareasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        btn_eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EliminarTarea();
             }
         });
 
@@ -146,6 +154,17 @@ public class AddTareasActivity extends AppCompatActivity {
             this.tarea.setSelected(Selected.isChecked());
             this.uow.getTareaRepository().InsertOrUpdate(this.tarea);
             Toast.makeText(this, "La Tarea se ha guardado correctamante", Toast.LENGTH_SHORT).show();
+            setResult(RESULT_OK);
+            finish();
+        }
+
+    }
+    private void EliminarTarea(){
+        if (this.tarea.getId() == 0){
+            Toast.makeText(this, "La tarea no existe", Toast.LENGTH_SHORT).show();
+        } else {
+            this.uow.getTareaRepository().DeleteById(this.tarea.getId());
+            Toast.makeText(this, "La tarea se ha eliminado correctamante", Toast.LENGTH_SHORT).show();
             setResult(RESULT_OK);
             finish();
         }

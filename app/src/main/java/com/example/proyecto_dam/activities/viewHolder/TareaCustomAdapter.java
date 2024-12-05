@@ -58,17 +58,14 @@ public class TareaCustomAdapter extends RecyclerView.Adapter<TareaCustomAdapter.
         localDataSet = dataSet;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
     public TareaViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.list_item_tareas, viewGroup, false);
 
         return new TareaViewHolder(view);
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(TareaViewHolder viewHolder,
                                  @SuppressLint("RecyclerView") final int position) {
@@ -87,7 +84,6 @@ public class TareaCustomAdapter extends RecyclerView.Adapter<TareaCustomAdapter.
         );
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return localDataSet == null ? 0 : localDataSet.size();

@@ -24,10 +24,6 @@ public class UnitOfWork {
         }else {
             this.db = this.sqliteHelper.getWritableDatabase();
         }
-        //}catch (Exception ex)
-        //{
-
-        //}
     }
 
     public void Close() {

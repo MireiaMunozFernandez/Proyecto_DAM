@@ -107,22 +107,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="20dp">
+            android:layout_marginTop="20dp">
 
             <!-- Cierra la activity sin guardar nada -->
             <Button
                 android:id="@+id/btn_salir_tarea"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_salir_tarea"
-                android:layout_marginRight="30dp"
-                />
+                android:layout_margin="4dp"
+                android:text="@string/btn_salir_tarea"/>
 
             <!-- Elimina los datos introducidos y cierra la activity -->
             <Button
                 android:id="@+id/btn_eliminar_tarea"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:text="@string/btn_eliminar_tarea" />
 
             <!-- Guarda los datos introducidos y cierra la activity -->
@@ -130,8 +130,8 @@
                 android:id="@+id/btn_guardar_tarea"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_guardar_tarea"
-                android:layout_marginLeft="30dp"/>
+                android:layout_margin="4dp"
+                android:text="@string/btn_guardar_tarea"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </LinearLayout>
